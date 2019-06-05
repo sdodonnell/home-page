@@ -17,7 +17,12 @@ const News = () => {
       if (story.multimedia.length) {
         thumb = story.multimedia[0].url
       }
-      return <NewsStory title={title} section={section} thumb={thumb} url={short_url}/>
+      return <NewsStory 
+                key={short_url}
+                title={title} 
+                section={section} 
+                thumb={thumb} 
+                url={short_url}/>
     })
   }
 
