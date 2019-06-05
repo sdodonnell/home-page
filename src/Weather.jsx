@@ -20,7 +20,7 @@ const Weather = () => {
       <h1>Today's weather:</h1>
       <h3>Today</h3>
         {today ? 
-          (<div>
+          (<div className="weather-section">
             <img src={today.icon}/>
             <p>{today.detailedForecast}</p>
           </div>)
@@ -28,7 +28,7 @@ const Weather = () => {
           <p>loading...</p>}
       <h3>Tonight</h3>
         {tonight ? 
-          (<div>
+          (<div className="weather-section">
             <img src={tonight.icon}/>
             <p>{tonight.detailedForecast}</p>
           </div>)
