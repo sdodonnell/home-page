@@ -6,10 +6,8 @@ const Poem = () => {
   const [poem, setPoem] = useState(null);
 
   useEffect(() => {
-    axios.get("http://www.poemist.com/api/v1/randompoems")
-      .then(result => {
-        setPoem(result.data)
-      })
+    let url = "http://poets.org/poem-a-day"
+    axios.get(url).then(res => console.log(res))
   }, [])
 
   return (
