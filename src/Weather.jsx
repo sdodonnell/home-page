@@ -8,7 +8,7 @@ const Weather = () => {
   const [tonight, setTonight] = useState(null);
 
   useEffect(() => {
-    let loc = "39.7456,-97.0892";
+    let loc = "37.841664,-122.284948"
     parseWeather(loc).then(result => {
       setToday(result.today);
       setTonight(result.tonight);
@@ -19,9 +19,20 @@ const Weather = () => {
     <div className="weather-container">
       <h1>Today's weather:</h1>
       <h3>Today</h3>
-        {today ? today.detailedForecast : <p>loading...</p>}
+        {today ? 
+          (<div>
+            <img src={today.icon}/>
+            <p>{today.detailedForecast}</p>
+          </div>)
+          : 
+          <p>loading...</p>}
       <h3>Tonight</h3>
-        {tonight ? tonight.detailedForecast : <p>loading...</p>}
+        {tonight ? 
+          (<div>
+            <img src={tonight.icon}/>
+            <p>{tonight.detailedForecast}</p>
+          </div>)
+          : <p>loading...</p>}
     </div>
   )
 }
